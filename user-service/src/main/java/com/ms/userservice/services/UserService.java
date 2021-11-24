@@ -37,12 +37,12 @@ public class UserService {
     }
 
     public List<Car> getCars(int userId) {
-        var list = restTemplate.getForObject("http://localhost:8002/api/cars/byUser/" + userId, Car[].class);
+        var list = restTemplate.getForObject("http://car-service/api/cars/byUser/" + userId, Car[].class);
         return List.of(list);
     }
 
     public List<Bike> getBikes(int userId) {
-        var list = restTemplate.getForObject("http://localhost:8003/api/bikes/byUser/" + userId, Bike[].class);
+        var list = restTemplate.getForObject("http://bike-service/api/bikes/byUser/" + userId, Bike[].class);
         return List.of(list);
     }
 

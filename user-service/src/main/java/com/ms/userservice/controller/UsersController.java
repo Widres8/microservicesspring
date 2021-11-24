@@ -57,7 +57,7 @@ public class UsersController {
     }
 
     @GetMapping("/cars/{userId}")
-    public ResponseEntity<List<Car>> getCars(int userId) {
+    public ResponseEntity<List<Car>> getCars(@PathVariable int userId) {
         var item = service.get(userId);
 
         if (item == null) {
@@ -74,7 +74,7 @@ public class UsersController {
     }
 
     @GetMapping("/bikes/{userId}")
-    public ResponseEntity<List<Bike>> getBikes(int userId) {
+    public ResponseEntity<List<Bike>> getBikes(@PathVariable int userId) {
         var item = service.get(userId);
 
         if (item == null) {

@@ -12,6 +12,12 @@
     },
     {
       "type": "java",
+      "name": "Launch EurekaServiceApplication",
+      "request": "launch",
+      "mainClass": "com.ms.eurekaservice.EurekaApplication"
+    },
+    {
+      "type": "java",
       "name": "Launch Current File",
       "request": "launch",
       "mainClass": "${file}"
