@@ -1,0 +1,41 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Launch ConfigServiceApplication",
+      "request": "launch",
+      "mainClass": "com.ms.configservice.ConfigServiceApplication"
+    },
+    {
+      "type": "java",
+      "name": "Launch Current File",
+      "request": "launch",
+      "mainClass": "${file}"
+    },
+    {
+      "type": "java",
+      "name": "Launch BikeServiceApplication",
+      "request": "launch",
+      "mainClass": "com.ms.bikeservice.BikeServiceApplication",
+      "projectName": "bike-service"
+    },
+    {
+      "type": "java",
+      "name": "Launch CarServiceApplication",
+      "request": "launch",
+      "mainClass": "com.ms.carservice.CarServiceApplication",
+      "projectName": "car-service"
+    },
+    {
+      "type": "java",
+      "name": "Launch UserServiceApplication",
+      "request": "launch",
+      "mainClass": "com.ms.userservice.UserServiceApplication",
+      "projectName": "user-service"
+    }
+  ]
+}
