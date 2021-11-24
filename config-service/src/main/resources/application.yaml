@@ -7,6 +7,6 @@ spring:
         git:
           default-label: develop
           uri: https://github.com/Widres8/microservicesspring
-          search-path: config-data
+          search-paths: config-data
   application:
     name: config-service
