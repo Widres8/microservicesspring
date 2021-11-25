@@ -6,6 +6,12 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Launch GatewayServiceApplication",
+      "request": "launch",
+      "mainClass": "com.ms.gatewayservice.GatewayServiceApplication"
+    },
+    {
+      "type": "java",
       "name": "Launch ConfigServiceApplication",
       "request": "launch",
       "mainClass": "com.ms.configservice.ConfigServiceApplication"
@@ -14,7 +20,7 @@
       "type": "java",
       "name": "Launch EurekaServiceApplication",
       "request": "launch",
-      "mainClass": "com.ms.eurekaservice.EurekaApplication"
+      "mainClass": "com.ms.eureka.EurekaApplication"
     },
     {
       "type": "java",
