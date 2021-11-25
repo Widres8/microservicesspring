@@ -19,7 +19,7 @@
 	</properties>
 
 	<dependencies>
-
+		<!-- list https://www.youtube.com/watch?v=wF98ikyyKEI&list=PL4bT56Uw3S4yTSw5Cg1-mhgoS85fVeFkT&index=11&ab_channel=LuigiCode -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -56,6 +56,15 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-circuitbreaker-resilience4j</artifactId>
+		</dependency>
+		<!-- zipkin*sleuth -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-sleuth-zipkin</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-sleuth</artifactId>
 		</dependency>
 
 		<dependency>
