@@ -8,6 +8,7 @@ import com.ms.userservice.viewmodels.Bike;
 import com.ms.userservice.viewmodels.Car;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 
 @RestController
 @RequestMapping("api/users")
@@ -56,6 +59,7 @@ public class UsersController {
         return ResponseEntity.ok(item);
     }
 
+    @CircuitBreaker(name = "cars-cb", fallbackMethod = "fallbackGetCars")
     @GetMapping("/cars/{userId}")
     public ResponseEntity<List<Car>> getCars(@PathVariable int userId) {
         var item = service.get(userId);
@@ -73,6 +77,7 @@ public class UsersController {
         return ResponseEntity.ok(list);
     }
 
+    @CircuitBreaker(name = "bikes-cb", fallbackMethod = "fallbackGetBikes")
     @GetMapping("/bikes/{userId}")
     public ResponseEntity<List<Bike>> getBikes(@PathVariable int userId) {
         var item = service.get(userId);
@@ -88,5 +93,13 @@ public class UsersController {
         }
 
         return ResponseEntity.ok(list);
+    }
+
+    private ResponseEntity<List<Car>> fallbackGetCars(@PathVariable int userId, RuntimeException ex) {
+        return new ResponseEntity("Error al conectar al servicio", HttpStatus.OK);
+    }
+
+    private ResponseEntity<List<Bike>> fallbackGetBikes(@PathVariable int userId, RuntimeException ex) {
+        return new ResponseEntity("Error al conectar al servicio", HttpStatus.OK);
     }
 }
